@@ -1,5 +1,7 @@
 package model;
 
+import Interface.ValidacionLicenciaConducir;
+
 public class Chofer extends Usuario implements ValidacionLicenciaConducir {
     private String licencia;
     private Vehiculo vehiculo;
@@ -11,8 +13,8 @@ public class Chofer extends Usuario implements ValidacionLicenciaConducir {
     }
 
     public void aceptarViaje(Viaje viaje) { viaje.setEstado("Viajando"); }
-    public void declinarViaje(Viaje viaje) { /* ... */ }
-    public void añadirVehiculo(Vehiculo vehiculo) { this.vehiculo = vehiculo; }
+    public void declinarViaje(Viaje viaje) { viaje.setEstado("Cancelado"); }
+    public void aniadirVehiculo(Vehiculo vehiculo) { this.vehiculo = vehiculo; }
     public void quitarVehiculo(Vehiculo vehiculo) { this.vehiculo = null; }
 
     @Override
